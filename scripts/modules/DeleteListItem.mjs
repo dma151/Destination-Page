@@ -1,3 +1,9 @@
 export default function deleteListItem (e) {
-    e.target.parentElement.remove();
+    const selected = e.target.parentElement.getAttribute('id')
+    console.log(selected);
+    fetch(`http://localhost:3000/remove/${selected}`, {
+        method: 'delete'
+    })
+        .then(response => window.location.reload(true))
+        .catch(e => console.error(e))
 }
