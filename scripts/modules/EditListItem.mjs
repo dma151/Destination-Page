@@ -29,8 +29,6 @@ export default function editListItem (e) {
     }
 
     const selected = e.target.parentElement.getAttribute('id');
-    console.log(selected)
-    console.log(e.target.parentElement.querySelector(".cardHeader").innerText)
     fetch(`http://localhost:3000/edit/${selected}`, {
         method: 'put',
         headers: { 'Content-Type' : 'application/json' },
