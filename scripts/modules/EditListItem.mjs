@@ -1,11 +1,9 @@
 export default function editListItem (e) {
     const name = prompt("Enter new name");
     const location = prompt("Enter new location");
-    const image = prompt("Enter new photo url");
     const description = prompt("Enter new description");
     let newName;
     let newLocation;
-    let newImage;
     let newDescription;
     if (name != "") {
         newName = name
@@ -17,15 +15,10 @@ export default function editListItem (e) {
     } else {
         newLocation = e.target.parentElement.querySelector(".cardLocation").innerText
     }
-    if (image != "") {
-        newImage = image
-    } else {
-        newImage = e.target.parentElement.querySelector(".cardImage").innerText
-    }
     if (description != "") {
         newDescription = description
     } else {
-        newDescription = e.target.parentElement.querySelector(".cardImage").innerText
+        newDescription = e.target.parentElement.querySelector(".cardDescription").innerText
     }
 
     const selected = e.target.parentElement.getAttribute('id');
@@ -35,22 +28,10 @@ export default function editListItem (e) {
         body: JSON.stringify({
             name: newName,
             location: newLocation,
-            url: newImage,
+            url: e.target.parentElement.querySelector(".cardImage").innerTexte,
             description: newDescription
         })
     })
         .then(response => window.location.reload(true))
         .catch(e => console.error(e))
-    // if (name != "") {
-    //     e.target.parentElement.querySelector(".cardHeader").innerText = name;
-    // }
-    // if (location != "") {
-    //     e.target.parentElement.querySelector(".cardLocation").innerText = location;
-    // }
-    // // if (image != "") {
-    // //     e.target.parentElement.querySelector(".cardImage").innerText = image;
-    // // }
-    // if (description != "") {
-    //     e.target.parentElement.querySelector(".cardImage").innerText = description;
-    // }
 }

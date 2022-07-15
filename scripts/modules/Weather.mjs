@@ -51,5 +51,6 @@ export default function Weather () {
         weatherDiv.appendChild(header);
         weatherDiv.appendChild(details);
         document.querySelector("header").appendChild(weatherDiv);
+        return temperature
     }
 }
