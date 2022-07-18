@@ -22,7 +22,7 @@ export default function editListItem (e) {
     }
 
     const selected = e.target.parentElement.getAttribute('id');
-    fetch(`http://localhost:3000/edit/${selected}`, {
+    fetch(`https://vacation-destination-api.herokuapp.com/edit/${selected}`, {
         method: 'put',
         headers: { 'Content-Type' : 'application/json' },
         body: JSON.stringify({
