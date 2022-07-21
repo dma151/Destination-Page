@@ -8,7 +8,7 @@ form.addEventListener("submit", handleSubmit);
 weather();
 
 const getDestinations = async () => {
-    const res = await fetch('https://vacation-destination-api.herokuapp.com/')
+    const res = await fetch('http://localhost:3000/')
     const json = await res.json();
     let destinationsArray = json.data
     destinationsArray.map(destination => {

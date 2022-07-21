@@ -22,13 +22,13 @@ export default function editListItem (e) {
     }
 
     const selected = e.target.parentElement.getAttribute('id');
-    fetch(`https://vacation-destination-api.herokuapp.com/edit/${selected}`, {
+    fetch(`http://localhost:3000/edit/${selected}`, {
         method: 'put',
         headers: { 'Content-Type' : 'application/json' },
         body: JSON.stringify({
             name: newName,
             location: newLocation,
-            url: e.target.parentElement.querySelector(".cardImage").innerTexte,
+            url: e.target.parentElement.querySelector(".cardImage").innerText,
             description: newDescription
         })
     })

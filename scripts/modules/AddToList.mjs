@@ -3,7 +3,7 @@ import findImage from "./FindImage.mjs";
 const handleSubmit = async () => {
 
     const imageSrc = await findImage()
-    const call = await fetch('https://vacation-destination-api.herokuapp.com/new', {
+    const call = await fetch('http://localhost:3000/new', {
         method: "POST",
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({
